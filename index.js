@@ -6,7 +6,7 @@ const UserModel = require('./models/Users')
 require("dotenv").config();
 //import cors to connect the backend with react
 const cors = require('cors')
-
+const port =process.env.PORT || 3001;
 
 app.use(express.json()); // if you don't do this any post will be error
 app.use(cors());
@@ -33,6 +33,6 @@ app.post("/createUser", async (req, res) =>{
 });
 
 
-app.listen(3001, () => {
+app.listen(port, () => {
     console.log("SERVER RUNS PERFECTLY");
 });
